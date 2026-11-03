@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondation ORIMOLADE |Site officiel</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'orimolade-blue': '#0A52BA',
+                        'orimolade-gold': '#E1A100',
+                        'orimolade-purple': '#5E239D',
+                        'orimolade-dark': '#0F172A',
+                        'orimolade-light': '#F8FAFC',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-orimolade-light text-gray-800 font-sans flex flex-col min-h-screen antialiased">
+
+    <!-- Header Unique & Global (TopBar + Navbar) -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100">
+        <!-- Top bar avec informations de contact -->
+        <div
+            class="bg-gradient-to-r from-orimolade-blue via-blue-900 to-orimolade-dark text-white text-xs sm:text-sm py-2.5 px-4 sm:px-8 md:px-12 lg:px-16">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center space-x-6">
+                    <a href="tel:+2290196843609"
+                        class="hover:text-orimolade-gold transition-colors flex items-center gap-2 font-medium">
+                        <i class="fas fa-phone text-orimolade-gold"></i> +229 01 96 84 36 09
+                    </a>
+                    <span class="hidden md:inline text-gray-500">|</span>
+                    <a href="mailto:fondationorimolade@gmail.com"
+                        class="hidden md:flex items-center gap-2 hover:text-orimolade-gold transition-colors font-medium">
+                        <i class="fas fa-envelope text-orimolade-gold"></i> fondationorimolade@gmail.com
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="hidden md:text-gray-200 text-xs font-medium flex items-center gap-1.5">
+                        <i class="fas fa-location-dot text-orimolade-gold"></i> Godomey, Abomey-Calavi (Bénin)
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation principale -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 md:px-10 lg:px-14">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo Officiel Horizontal (Adapté et propre sur tous les écrans) -->
+                <a href="#index" data-link="index" class="h-12 sm:h-14 lg:h-16 flex items-center group cursor-pointer">
+                    <img src="./img/logo_h1.jpg" alt="Logo Fondation ORIMOLADE"
+                        class="h-full w-auto max-w-[200px] sm:max-w-[200px] lg:max-w-[160px] object-contain object-left group-hover:scale-105 transition-all duration-300">
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm">
+                    <a href="#index" data-link="index"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Accueil</a>
+                    <a href="#a-propos" data-link="a-propos"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Qui
+                        sommes-nous ?</a>
+                    <a href="#projets" data-link="projets"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Projets
+                        / Activités</a>
+                    <a href="#galerie" data-link="galerie"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Galerie</a>
+                    <a href="#equipe" data-link="equipe"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Notre
+                        Équipe</a>
+                    <a href="#actualites" data-link="actualites"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Actualités</a>
+                    <a href="#don" data-link="don"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Faire
+                        un don</a>
+                    <a href="#contact" data-link="contact"
+                        class="nav-desktop-item text-gray-700 hover:text-orimolade-blue font-medium transition-colors duration-200">Contact</a>
+                </nav>
+
+                <!-- Bouton d'action principal Desktop -->
+                <div class="hidden lg:flex items-center">
+                    <a href="#don" data-link="don"
+                        class="bg-gradient-to-r from-orimolade-gold to-yellow-500 hover:from-yellow-500 hover:to-orimolade-gold text-slate-900 font-extrabold px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+                        <i class="fas fa-heart text-red-700 animate-pulse"></i> Faire un don
+                    </a>
+                </div>
+
+                <!-- Hamburger Button (Mobile) -->
+                <button id="mobile-menu-btn" type="button"
+                    class="lg:hidden relative p-2.5 rounded-2xl text-slate-800 hover:bg-orimolade-blue/10 focus:outline-none transition-all duration-200 border border-gray-200/80 shadow-sm"
+                    aria-label="Ouvrir le menu">
+                    <div class="flex flex-col justify-center items-center w-6 h-5 space-y-1.5">
+                        <span class="w-6 h-0.5 bg-slate-800 rounded-full transition-all"></span>
+                        <span class="w-4 h-0.5 bg-orimolade-gold rounded-full self-end transition-all"></span>
+                        <span class="w-6 h-0.5 bg-slate-800 rounded-full transition-all"></span>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Sliding Panel -->
+    <div id="mobile-backdrop"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+
+    <aside id="mobile-drawer"
+        class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between">
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-slate-50">
+            <div class="flex items-center gap-3">
+                <a href="#index" data-link="index"
+                    class="w-full h-full item-center justify-center pt-4 group cursor-pointer">
+                    <img src="./img/logo_h1.jpg" alt=""
+                        class="w-[80%] h-[70%] group-hover:scale-105 transition-all duration-300">
+                </a>
+
+            </div>
+            <button id="mobile-menu-close"
+                class="p-2 rounded-xl text-gray-500 hover:text-slate-900 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Body Navigation -->
+        <div class="p-6 flex-grow overflow-y-auto space-y-2">
+            <p class="text-xs uppercase font-bold text-gray-400 tracking-wider mb-3 px-2">Navigation</p>
+            <a href="#index" data-link="index"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Accueil
+                <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+            <a href="#a-propos" data-link="a-propos"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Qui
+                sommes-nous ? <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+            <a href="#projets" data-link="projets"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Projets
+                / Activités <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+            <a href="#galerie" data-link="galerie"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Galerie
+                <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+            <a href="#equipe" data-link="equipe"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Notre
+                Équipe <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+            <a href="#actualites" data-link="actualites"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Actualités
+                <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+            <a href="#don" data-link="don"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Faire
+                un don <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+            <a href="#contact" data-link="contact"
+                class="nav-mobile-item flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-orimolade-blue rounded-xl transition-all duration-200">Contact
+                <i class="fas fa-chevron-right text-xs text-gray-300"></i></a>
+        </div>
+
+        <!-- Drawer Footer Call To Action -->
+        <div class="p-6 border-t border-gray-100 bg-slate-50 space-y-4">
+            <a href="#don" data-link="don"
+                class="block w-full text-center bg-gradient-to-r from-orimolade-gold to-yellow-500 text-slate-900 font-bold py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all">
+                <i class="fas fa-heart text-red-700 mr-2"></i> Faire un don
+            </a>
+            <div class="text-center text-xs text-gray-500">
+                <p><i class="fas fa-phone text-orimolade-gold mr-1"></i> +229 01 96 84 36 09</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Zone de Contenu Dynamique (Injectée par JS) -->
+    <main id="app-main" class="flex-grow transition-opacity duration-200">
+        <!-- Contenu dynamique chargé ici -->
+    </main>
+
+    <!-- Pied de Page Unique & Global -->
+    <footer class="bg-orimolade-dark text-white pt-16 pb-8 border-t-4 border-orimolade-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-orimolade-gold flex items-center justify-center font-black text-orimolade-dark text-lg shadow-sm">
+                            FO
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight text-white">FONDATION <span
+                                class="text-orimolade-gold">ORIMOLADE</span></h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Institution apolitique, laïque et à but non lucratif créée le 08 Août 2026 au Bénin. Dédiée à
+                        l'autonomisation économique des jeunes, à la promotion de l'auto-emploi et au soutien des
+                        personnes vulnérables.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-orimolade-gold mb-4 border-b border-gray-800 pb-2">Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li><a href="#a-propos" data-link="a-propos"
+                                class="hover:text-orimolade-gold transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-orimolade-blue"></i> Qui sommes-nous ?</a>
+                        </li>
+                        <li><a href="#projets" data-link="projets"
+                                class="hover:text-orimolade-gold transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-orimolade-blue"></i> Nos Projets &
+                                Activités</a></li>
+                        <li><a href="#equipe" data-link="equipe"
+                                class="hover:text-orimolade-gold transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-orimolade-blue"></i> Structure &
+                                Gouvernance</a></li>
+                        <li><a href="#actualites" data-link="actualites"
+                                class="hover:text-orimolade-gold transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-orimolade-blue"></i> Actualités &
+                                Communiqués</a></li>
+                        <li><a href="#don" data-link="don"
+                                class="hover:text-orimolade-gold transition-colors flex items-center gap-2"><i
+                                    class="fas fa-chevron-right text-xs text-orimolade-blue"></i> Soutenir la
+                                fondation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-orimolade-gold mb-4 border-b border-gray-800 pb-2">Nos Actions
+                    </h4>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orimolade-gold text-xs"></i>
+                            Auto-emploi & Entrepreneuriat</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orimolade-gold text-xs"></i>
+                            Coaching & Développement personnel</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orimolade-gold text-xs"></i>
+                            Insertion socioprofessionnelle</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orimolade-gold text-xs"></i>
+                            Assistance sociale & humanitaire</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orimolade-gold text-xs"></i>
+                            Incubateurs d'entreprises</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-orimolade-gold mb-4 border-b border-gray-800 pb-2">Siège Social
+                    </h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-orimolade-gold mt-1"></i>
+                            <span>République du Bénin, Dép. Atlantique, Abomey-Calavi, Arr. Godomey, Q. Yolomahouto,
+                                Immeuble HOUENOU Ezequiel, Lot 17bis, Parcelle M.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-orimolade-gold"></i>
+                            <a href="tel:+2290196843609" class="hover:text-orimolade-gold">+229 01 96 84 36 09</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-orimolade-gold"></i>
+                            <a href="mailto:fondationorimolade@gmail.com"
+                                class="hover:text-orimolade-gold break-all">fondationorimolade@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-globe text-orimolade-gold"></i>
+                            <a href="http://www.fondationorimolade.com" target="_blank"
+                                class="hover:text-orimolade-gold">www.fondationorimolade.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-4">
+                <p>&copy; 2026 Fondation ORIMOLADE. Tous droits réservés.</p>
+                <p class="text-gray-500">Conforme à la loi N° 2025-19 relative aux associations et fondations en
+                    République du Bénin.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modules de pages & Script Principal (100% compatible file:// sans erreurs CORS) -->
+    <script src="js/pages.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
