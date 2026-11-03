@@ -65,6 +65,11 @@ function loadPage(pageName) {
         updateActiveNav(targetPage);
         window.scrollTo({ top: 0, behavior: 'smooth' });
         mainContainer.style.opacity = '1';
+
+        if (targetPage === 'index' && typeof initHeroCarousel === 'function') {
+            initHeroCarousel();
+        }
+
     }, 150);
 }
 
@@ -116,8 +121,16 @@ function initRouter() {
     loadPage(initialPage);
 }           
 
-// Remplacez ou ajoutez cette fonction dans votre fichier js/main.js :
+
+let heroSlideInterval = null; // Variable globale pour stopper le timer précédent
+
 function initHeroCarousel() {
+    // Nettoie un éventuel intervalle encore actif
+    if (heroSlideInterval) {
+        clearInterval(heroSlideInterval);
+        heroSlideInterval = null;
+    }
+
     const slideBgs = document.querySelectorAll('.hero-slide');
     const slideContents = document.querySelectorAll('.hero-content-slide');
     const dots = document.querySelectorAll('#hero-dots button');
@@ -125,7 +138,6 @@ function initHeroCarousel() {
     if (slideBgs.length === 0 || slideContents.length === 0) return;
 
     let currentSlide = 0;
-    let slideInterval = null;
 
     function showSlide(index) {
         // Gérer les backgrounds
@@ -150,7 +162,7 @@ function initHeroCarousel() {
             }
         });
 
-        // Gérer les indicateurs (dots)
+        // Gérer les dots
         if (dots.length > 0) {
             dots.forEach((dot, i) => {
                 if (i === index) {
@@ -166,30 +178,26 @@ function initHeroCarousel() {
     window.nextSlide = function() {
         let next = (currentSlide + 1) % slideBgs.length;
         showSlide(next);
-        resetInterval();
+        startInterval();
     };
 
     window.prevSlide = function() {
         let prev = (currentSlide - 1 + slideBgs.length) % slideBgs.length;
         showSlide(prev);
-        resetInterval();
+        startInterval();
     };
 
     window.setSlide = function(index) {
         showSlide(index);
-        resetInterval();
+        startInterval();
     };
 
     function startInterval() {
-        if (slideInterval) clearInterval(slideInterval);
-        slideInterval = setInterval(() => {
+        if (heroSlideInterval) clearInterval(heroSlideInterval);
+        heroSlideInterval = setInterval(() => {
             let next = (currentSlide + 1) % slideBgs.length;
             showSlide(next);
-        }, 6000); // Change toutes les 6 secondes automatiquement
-    }
-
-    function resetInterval() {
-        startInterval();
+        }, 6000);
     }
 
     showSlide(0);

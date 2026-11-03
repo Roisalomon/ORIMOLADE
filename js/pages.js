@@ -4,23 +4,23 @@ window.SITE_PAGES = {
     // Dans js/pages.js, remplacez la propriété 'index' par :
     'index': `
         <!-- Multi-Hero Carousel Section (Inspiré du style Senat Jeunes / Phytocare) -->
-        <section class="relative text-white py-16 sm:py-24 lg:py-32 overflow-hidden min-h-[500px] sm:min-h-[600px] flex items-center">
+        <section class="relative text-white py-1 sm:py-2 lg:py-2 overflow-hidden min-h-[500px] sm:min-h-[600px] flex items-center">
             
             <!-- SLIDE 1 BACKGROUND -->
-            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 block">
-                <div class="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-10000" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 hidden">
+                <div class="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-10000" style="background-image: url('./img/s1.avif');"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-orimolade-dark/95 via-orimolade-blue/85 to-transparent"></div>
             </div>
 
             <!-- SLIDE 2 BACKGROUND -->
             <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 hidden">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./img/s2.avif');"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-orimolade-dark/95 via-orimolade-purple/85 to-transparent"></div>
             </div>
 
             <!-- SLIDE 3 BACKGROUND -->
             <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 hidden">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./img/s3.avif');"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-orimolade-blue/85 to-transparent"></div>
             </div>
 
