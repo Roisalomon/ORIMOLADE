@@ -560,7 +560,7 @@ window.SITE_PAGES = {
                                 </div>
                                 <div class="text-sm">
                                     <span class="block font-bold text-gray-900">Adresse du Siège</span>
-                                    <span class="text-gray-600">République du Bénin, Dép. Atlantique, Abomey-Calavi, Arr. Godomey, Q. Yolomahouto, Immeuble HOUENOU Ezequiel, Lot 17bis, Parcelle M.</span>
+                                    <span class="text-gray-600">République du Bénin, Dép. Atlantique, Abomey-Calavi, Arr. Godomey, Q. Yolomahouto, Immeuble HOUENOU Ezekiel, Lot 17bis, Parcelle M.</span>
                                 </div>
                             </div>
 
